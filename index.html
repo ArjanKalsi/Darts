@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Scoring</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="setupScreen" class="setup-screen">
+        <h1>Darts Game Setup</h1>
+        <div class="form-group">
+            <label for="player1Name">Player 1 Name:</label>
+            <input type="text" id="player1Name" placeholder="Player 1">
+        </div>
+        <div class="form-group">
+            <label for="player2Name">Player 2 Name:</label>
+            <input type="text" id="player2Name" placeholder="Player 2">
+        </div>
+        <div class="form-group">
+            <label for="gameType">Game Type:</label>
+            <select id="gameType">
+                <option value="501">501</option>
+                <option value="301">301</option>
+                <option value="101">101</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="legs">First to:</label>
+            <input type="number" id="legs" min="1" value="1">
+        </div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <div id="gameScreen" class="game-screen hidden">
+        <button onclick="endGame()" class="end-game-btn">End Game</button>
+        <div class="game-container">
+            <div id="player1Section" class="player-section active">
+                <h2 id="player1NameDisplay">Player 1</h2>
+                <p id="player1Score">501</p>
+                <p id="player1Average">Average: 0</p>
+                <p id="player1DartsThrown">Darts Thrown: 0</p>
+                <p id="player1Legs">Legs Won: 0</p>
+            </div>
+            <div id="player2Section" class="player-section">
+                <h2 id="player2NameDisplay">Player 2</h2>
+                <p id="player2Score">501</p>
+                <p id="player2Average">Average: 0</p>
+                <p id="player2DartsThrown">Darts Thrown: 0</p>
+                <p id="player2Legs">Legs Won: 0</p>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="scoreInput" placeholder="Enter score">
+            <div class="keypad">
+                <!-- Number Buttons -->
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="undo()">Undo</button>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="deleteNumber()">Del</button>
+                <!-- Wrapper for Submit Button -->
+                <div class="submit-btn-wrapper">
+                    <button onclick="updateScore()" class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Winner Popup -->
+    <div id="winnerPopup" class="popup hidden">
+        <button id="closePopup" class="close-btn">X</button>
+        <div id="winnerText"></div>
+        <!-- Click-to-exit text will be dynamically added by JavaScript -->
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay hidden"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

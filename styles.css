@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Setup Screen */
+.setup-screen {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.setup-screen h1 {
+    margin-bottom: 20px;
+}
+
+.setup-screen .form-group {
+    margin-bottom: 15px;
+}
+
+.setup-screen label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.setup-screen input, .setup-screen select {
+    width: calc(100% - 22px); /* Adjusted for padding and border */
+    padding: 10px;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.setup-screen button {
+    padding: 10px 20px;
+    background-color: #ffa500;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Game Screen */
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px; /* Ensures game screen is centered and has a max width */
+    margin: auto;
+    position: relative;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.player-section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 48%;
+    text-align: center;
+}
+
+.input-section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    padding-bottom: 80px; /* Ensure space for the submit button */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    position: relative; /* Ensure the submit button is positioned relative to this section */
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 80%; /* Adjust width */
+    margin: 0 auto; /* Center the input box */
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.keypad button {
+    padding: 15px; /* Match the padding of keypad buttons */
+    background-color: #333;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.keypad button:hover {
+    background-color: #444;
+}
+
+.submit-btn-wrapper {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to ensure proper spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 40px); /* Adjust width to match keypad button width */
+}
+
+.submit-btn-wrapper button {
+    padding: 15px; /* Match padding with keypad buttons */
+    background-color: #333;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    width: 100%; /* Make sure the button fills the container */
+}
+
+.submit-btn-wrapper button:hover {
+    background-color: #444;
+}
+
+/* Active Player Highlight */
+.active {
+    border: 2px solid #ffa500;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Winner Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Winner Popup Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff4500; /* Orange-red color */
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it is above other elements */
+}
+
+.close-btn:hover {
+    background: #ff6347; /* Slightly lighter red */
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.hidden {
+    display: none;
+}
+
+.end-game-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #cc3333; /* A subdued red color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it is above other elements */
+    font-size: 16px;
+}
+
+.end-game-btn:hover {
+    background-color: #b32d2d; /* Slightly darker red for hover effect */
+}
